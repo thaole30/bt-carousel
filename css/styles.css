@@ -50,17 +50,59 @@ main .carousel-container {
 }
 
 .carousel-list .item {
-    border: 1px solid #ddd;
     border-radius: 5px;
     color: #fff;
+    width: 160px;
     display: flex;
     flex-direction: column;
-    height: 175px;
     width: 160px;
-    text-align: center;
+    height: 175px;
     padding: 10px 10px;
     margin: 0 5px;
+    border: 1px solid #ddd;
+    text-align: center;
     flex-shrink: 0;
+}
+
+.carousel-list .item:first-child {
+    /* overflow: hidden; */
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeOut {
+    0% {
+        /* width: 160px;
+        padding: 10px 10px;
+        margin: 0 5px;
+        border: 1px solid #ddd;
+        opacity: 1; */
+    }
+    100% {
+        width: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        width: 0;
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        border: 0;
+    }
+    100% {
+        /* width: 160px;
+        padding: 10px 10px;
+        margin: 0 5px;
+        border: 1px solid #ddd;
+        opacity: 1; */
+    }
 }
 
 .item .item-picture {
@@ -100,7 +142,7 @@ main .carousel-container {
 
 #prevBtn {
     position: absolute;
-    top: 50%;
+    top: 25%;
     z-index: 10;
     left: 2%;
     font-size: 30px;
@@ -115,7 +157,7 @@ main .carousel-container {
 
 #nextBtn {
     position: absolute;
-    top: 50%;
+    top: 25%;
     z-index: 10;
     right: 2%;
     font-size: 30px;
