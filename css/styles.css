@@ -20,12 +20,83 @@ a {
     text-decoration: none;
 }
 
+body {
+    padding: 0 2rem;
+    background-color: var(--white-color);
+}
 
+body.dark {
+    background-color: var(--dark-color);
+}
+
+body.dark h2 {
+    color: var(--white-color);
+}
+
+body.dark .carousel-list {
+    background-color: var(--white-color);
+}
+
+body.dark .carousel-list .item {
+    border-color: var(--dark-color);
+}
+
+body.dark .carousel-list .item .item-name {
+    color: var(--blue-color);
+}
+
+body.dark #prevBtn, body.dark #nextBtn {
+    background-color: var(--dark-color);
+}
+
+:root {
+    --dark-color: rgb(48, 45, 45);
+    --white-color: #fff;
+    --blue-color: #1877F2
+}
 
 
 /* -----------START----------- */
 header {
     margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.8rem;
+}
+
+header label {
+    width: 60px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: rgb(48, 45, 45);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    cursor: pointer;
+    position: relative;
+    border: 2px solid var(--white-color);
+}
+
+
+.fa-moon {
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f39c12;
+}
+
+header label .ball {
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: #fff;
+    left: 3px;
+    transform: translateX(0);
+    transition: transform 300ms ease-in-out;
 }
 
 header h2 {
@@ -35,17 +106,18 @@ header h2 {
 
 main {
     /* padding: 1rem; */
-    margin: 1rem;
+    /* margin: 1rem; */
 }
 
 main .carousel-container {
     overflow: hidden;
     background-color: rgb(48, 45, 45);
+    position: relative;
 }
 
 .carousel-list {
     display: flex;
-    padding: 1rem;
+    padding: 0.5rem;
     background-color: rgb(48, 45, 45);
 }
 
@@ -55,13 +127,17 @@ main .carousel-container {
     width: 160px;
     display: flex;
     flex-direction: column;
-    width: 160px;
+    width: 152px;
     height: 175px;
     padding: 10px 10px;
     margin: 0 5px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--white-color);
     text-align: center;
     flex-shrink: 0;
+}
+
+.carousel-list .item .item-name {
+    color: var(--white-color);
 }
 
 .carousel-list .item:first-child {
@@ -129,22 +205,22 @@ main .carousel-container {
 
 .item .message {
     margin-top: auto;
-    border: 1px solid #1877F2;
+    border: 1px solid var(--blue-color);
     padding: 5px;
     border-radius: 5px;
 }
 
 .item .message p {
-    color: #1877F2;
+    color: var(--blue-color);
 }
 
 
 
 #prevBtn {
     position: absolute;
-    top: 25%;
+    top: 40%;
     z-index: 10;
-    left: 2%;
+    left: 1%;
     font-size: 30px;
     color: white;
     opacity: 0.9;
@@ -157,9 +233,9 @@ main .carousel-container {
 
 #nextBtn {
     position: absolute;
-    top: 25%;
+    top: 40%;
     z-index: 10;
-    right: 2%;
+    right: 1%;
     font-size: 30px;
     color: white;
     opacity: 0.9;
@@ -170,5 +246,6 @@ main .carousel-container {
 
 
 #prevBtn:hover, #nextBtn:hover {
-    border: 2px solid #1877F2;
+    border: 2px solid var(--blue-color);
+    background-color: var(--blue-color);
 }

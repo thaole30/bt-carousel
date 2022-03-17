@@ -24,4 +24,23 @@ prevBtn.addEventListener("click", function () {
     firstItem.addEventListener("animationend", function () {
         firstItem.style.animationName = null;
     }, {once: true});
+});
+
+
+// change theme
+
+const checkbox = document.getElementById('check');
+
+const ball = document.querySelector('header label .ball');
+
+checkbox.addEventListener('change', function () {
+    document.querySelector('body').classList.toggle('dark');
+
+    if(document.querySelector('body').classList.contains("dark")) {
+        console.log("ball move")
+        ball.style.transform = 'translateX(28px)';
+    } else {
+        ball.style.transform = 'translateX(0px)';
+    }
 })
+
